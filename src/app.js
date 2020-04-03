@@ -3,6 +3,7 @@ const tmi = require('tmi.js')
 const connection = require('./settings/connection.js')
 const commands = require('./commands/commands.js')
 const connection_mongoose = require('./settings/connection_mongoose')
+const message_reader = require('./message_reader')
 
 console.clear()
 
@@ -18,4 +19,5 @@ client.connect().then(() =>
 
 client.on('chat', function (channel, username, message, self) {
    new commands(client, channel, username, message, self)
+   new message_reader(client, channel, username, message, self)
 }) 

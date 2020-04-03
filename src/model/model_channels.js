@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const model_channels = new Schema({
+const Model_channels = new Schema({
    channel: {
       type: String,
       required: true
@@ -12,4 +12,4 @@ const model_channels = new Schema({
    }
 })
 
-mongoose.model('model_channels', model_channels)
+mongoose.model('model_channels', Model_channels)
