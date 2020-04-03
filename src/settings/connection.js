@@ -1,3 +1,5 @@
+const identity = require('./key.json')
+
 module.exports = connection = {
    options: {
       debug: true
@@ -9,8 +11,8 @@ module.exports = connection = {
       reconnectInterval: 1000
    },
    identity: {
-      username: "kawobot",
-      password: "mgggjo7yfb6lihg9jek3wryj6dmfw3" 
+      username: identity['username'],
+      password: identity['password'] 
    },
    channels: ['is_kaworii']
 }
