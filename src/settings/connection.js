@@ -1,4 +1,16 @@
+require('../model/model_channels')
+const mongoose = require('mongoose')
 const identity = require('./key.json')
+const model_channels = mongoose.model('model_channels')
+
+
+let Channels = []
+model_channels.find().then((channels) => {
+   for (let channel of channels) {
+      Channels.push(channel['channel'].substr(1))
+   }
+})
+
 
 module.exports = connection = {
    options: {
@@ -14,5 +26,5 @@ module.exports = connection = {
       username: identity['username'],
       password: identity['password'] 
    },
-   channels: ['is_kaworii']
+   channels: Channels
 }
